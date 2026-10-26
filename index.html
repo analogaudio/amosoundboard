@@ -43,6 +43,10 @@ h2{font-size:clamp(2rem,5vw,3rem)}
 .apps{display:flex;gap:8px;margin-left:auto}
 .apps a{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line);border-radius:8px;background:var(--surface2);color:var(--fg);transition:transform .1s,background .1s}
 .apps a:hover{background:var(--accent);color:var(--accent-fg);transform:translateY(-1px)}
+.apps a.wtf{width:36px;font:700 1.15rem var(--display);text-decoration:none;text-transform:lowercase}
+.flinks{display:flex;gap:18px}
+.flinks a.fl{font:700 1.2rem var(--display);text-decoration:none;text-transform:lowercase;color:var(--fg)}
+.flinks a.fl:hover{color:var(--accent)}
 .apps a:focus-visible,.ad:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .apps svg,.ad .ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .more-label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:600;margin:0 0 .8rem}
@@ -120,7 +124,6 @@ html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!i
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-cmd" viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1.5"/><rect x="13" y="4" width="8" height="16" rx="1.5"/><path d="M5.5 8h3M5.5 12h3M15.5 8h3M15.5 12h3"/></symbol>
   <symbol id="i-asio" viewBox="0 0 24 24"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 7v10M21 12h0"/></symbol>
-  <symbol id="i-sb" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
 </svg>
 <div class="wrap">
   <div class="top">
@@ -128,7 +131,7 @@ html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!i
     <div class="apps" aria-label="Analog Audio apps">
       <a href="https://analogaudio.github.io/amocommander/" target="_blank" rel="noopener" aria-label="AMO Commander" title="AMO Commander"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cmd"/></svg></a>
       <a href="https://analogaudio.github.io/asiodriver/" target="_blank" rel="noopener" aria-label="AMO ASIO Driver" title="AMO ASIO Driver"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asio"/></svg></a>
-      <a href="https://analogaudio.github.io/amosoundboard/" target="_blank" rel="noopener" aria-label="AMO Soundboard" title="AMO Soundboard"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sb"/></svg></a>
+      <a class="wtf" href="https://analogaudio.github.io/lights-sounds/" target="_blank" rel="noopener" aria-label="Website" title="Website">w</a><a class="wtf" href="https://www.tiktok.com/@analogaudio430" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">t</a><a class="wtf" href="https://www.facebook.com/amo430" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">f</a>
     </div>
     <a class="btn primary" href="#buy">Buy for ₱700</a>
   </div>
@@ -237,11 +240,10 @@ html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!i
     <div class="ads">
       <a class="ad" href="https://analogaudio.github.io/amocommander/" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cmd"/></svg></span><span><b>AMO Commander</b><span class="d">Two-pane file manager and fast file copier for Windows.</span><span class="go">Visit page &rarr;</span></span></a>
       <a class="ad" href="https://analogaudio.github.io/asiodriver/" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asio"/></svg></span><span><b>AMO ASIO Driver</b><span class="d">Low-latency ASIO audio driver for Windows, with buffer control.</span><span class="go">Visit page &rarr;</span></span></a>
-      <a class="ad" href="https://analogaudio.github.io/amosoundboard/" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sb"/></svg></span><span><b>AMO Soundboard</b><span class="d">Instant-play sound pads for churches, events and live shows.</span><span class="go">Visit page &rarr;</span></span></a>
       </div>
     <div class="credit">
       <span>Created by Arvin M. Ocampo</span>
-      <a href="https://www.facebook.com/amo430" target="_blank" rel="noopener">facebook.com/amo430</a>
+      <span class="flinks"><a class="fl" href="https://analogaudio.github.io/lights-sounds/" target="_blank" rel="noopener" aria-label="Website" title="Website">w</a><a class="fl" href="https://www.tiktok.com/@analogaudio430" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">t</a><a class="fl" href="https://www.facebook.com/amo430" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">f</a></span>
     </div>
   </footer>
 </div>
