@@ -39,6 +39,22 @@ h2{font-size:clamp(2rem,5vw,3rem)}
 .brand{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:.06em}
 .top .btn{min-height:40px;padding:0 1rem}
 
+.top{flex-wrap:wrap}
+.apps{display:flex;gap:8px;margin-left:auto}
+.apps a{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line);border-radius:8px;background:var(--surface2);color:var(--fg);transition:transform .1s,background .1s}
+.apps a:hover{background:var(--accent);color:var(--accent-fg);transform:translateY(-1px)}
+.apps a:focus-visible,.ad:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.apps svg,.ad .ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.more-label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:600;margin:0 0 .8rem}
+.ads{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:1.8rem}
+.ad{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;text-decoration:none;color:var(--fg);min-width:0}
+.ad:hover{border-color:var(--accent)}
+.ad .ico{flex:none;width:48px;height:48px;border-radius:10px;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center}
+.ad b{display:block;font:700 1.25rem/1.1 var(--display);letter-spacing:.02em}
+.ad span.d{display:block;color:var(--dim);font-size:.88rem;line-height:1.35;margin-top:2px}
+.ad span.go{display:block;font-size:.8rem;font-weight:600;color:var(--accent);margin-top:4px}
+.credit{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
 /* hero */
 .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;padding-block:clamp(1.5rem,4vw,3rem) clamp(2rem,5vw,4rem)}
 .hero h1{font-size:clamp(3rem,9vw,5.6rem);margin:.6rem 0 1rem}
@@ -51,6 +67,9 @@ h2{font-size:clamp(2rem,5vw,3rem)}
 .pad:active,.pad.hit{transform:scale(.96);box-shadow:0 0 0 3px #fff,0 0 22px rgba(255,255,255,.5)}
 .board-cap{grid-column:1/-1;font-size:.78rem;color:var(--dim);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:4px 2px 0}
 
+.hero>*{min-width:0}
+.pad{min-width:0;overflow:hidden;overflow-wrap:anywhere}
+@media (max-width:520px){.pad{font-size:.78rem;padding:6px}}
 /* sections */
 section{padding-block:clamp(2.5rem,6vw,4.5rem);border-top:1px solid var(--line)}
 .sec-head{display:grid;gap:.6rem;margin-bottom:2rem;max-width:40rem}
@@ -88,7 +107,7 @@ section{padding-block:clamp(2.5rem,6vw,4.5rem);border-top:1px solid var(--line)}
 details{border-bottom:1px solid var(--line);padding:.9rem 0}
 summary{cursor:pointer;font-weight:600;list-style-position:outside}
 details p{margin:.6rem 0 0;color:var(--dim);max-width:46rem}
-footer{border-top:1px solid var(--line);padding-block:2rem 3rem;color:var(--dim);font-size:.92rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding-block:2rem 3rem;color:var(--dim);font-size:.92rem}
 
 @media (max-width:820px){.hero{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.pad{transition:none}}
@@ -98,9 +117,19 @@ html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!i
 <body>
 
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-cmd" viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1.5"/><rect x="13" y="4" width="8" height="16" rx="1.5"/><path d="M5.5 8h3M5.5 12h3M15.5 8h3M15.5 12h3"/></symbol>
+  <symbol id="i-asio" viewBox="0 0 24 24"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 7v10M21 12h0"/></symbol>
+  <symbol id="i-sb" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+</svg>
 <div class="wrap">
   <div class="top">
     <span class="brand">ANALOG AUDIO</span>
+    <div class="apps" aria-label="Analog Audio apps">
+      <a href="https://analogaudio.github.io/amocommander/" target="_blank" rel="noopener" aria-label="AMO Commander" title="AMO Commander"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cmd"/></svg></a>
+      <a href="https://analogaudio.github.io/asiodriver/" target="_blank" rel="noopener" aria-label="AMO ASIO Driver" title="AMO ASIO Driver"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asio"/></svg></a>
+      <a href="https://analogaudio.github.io/amosoundboard/" target="_blank" rel="noopener" aria-label="AMO Soundboard" title="AMO Soundboard"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sb"/></svg></a>
+    </div>
     <a class="btn primary" href="#buy">Buy for ₱700</a>
   </div>
 
@@ -204,8 +233,16 @@ html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!i
   </section>
 
   <footer>
-    <span>Created by Arvin M. Ocampo</span>
-    <a href="https://www.facebook.com/amo430" target="_blank" rel="noopener">facebook.com/amo430</a>
+    <p class="more-label">More from Analog Audio</p>
+    <div class="ads">
+      <a class="ad" href="https://analogaudio.github.io/amocommander/" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cmd"/></svg></span><span><b>AMO Commander</b><span class="d">Two-pane file manager and fast file copier for Windows.</span><span class="go">Visit page &rarr;</span></span></a>
+      <a class="ad" href="https://analogaudio.github.io/asiodriver/" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-asio"/></svg></span><span><b>AMO ASIO Driver</b><span class="d">Low-latency ASIO audio driver for Windows, with buffer control.</span><span class="go">Visit page &rarr;</span></span></a>
+      <a class="ad" href="https://analogaudio.github.io/amosoundboard/" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sb"/></svg></span><span><b>AMO Soundboard</b><span class="d">Instant-play sound pads for churches, events and live shows.</span><span class="go">Visit page &rarr;</span></span></a>
+      </div>
+    <div class="credit">
+      <span>Created by Arvin M. Ocampo</span>
+      <a href="https://www.facebook.com/amo430" target="_blank" rel="noopener">facebook.com/amo430</a>
+    </div>
   </footer>
 </div>
 
